@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { calculateTrendPercentage, cn } from '~/lib/utils'
 
 const StatsCard = ({
