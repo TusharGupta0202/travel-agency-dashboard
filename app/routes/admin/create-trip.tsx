@@ -76,7 +76,7 @@ const CreateTrip = ({loaderData}:Route.ComponentProps) => {
                 headers: {'Content-Type' : 'application/json'},
                 body : JSON.stringify({
                     country : formData.country,
-                    noOfDays : formData.duration,
+                    numberOfDays : formData.duration,
                     travelStyle : formData.travelStyle,
                     interests : formData.interest,
                     budget : formData.budget,
@@ -87,7 +87,7 @@ const CreateTrip = ({loaderData}:Route.ComponentProps) => {
 
             const result : CreateTripResponse = await response.json();
 
-            if(result?.id) navigate(`/trpis/${result.id}`)
+            if(result?.id) navigate(`/trips/${result.id}`)
             else console.error('failed to generate trip.')
         } catch (e) {
             console.log('Error generating trip',e);

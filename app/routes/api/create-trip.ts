@@ -69,6 +69,7 @@ export const action = async({request} : ActionFunctionArgs ) => {
                 .getGenerativeModel({model:'gemini-2.0-flash'})
                 .generateContent([prompt])
 
+            
             const trip = parseMarkdownToJson(textResult.response.text());
 
             const imageResponse = await fetch(

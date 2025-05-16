@@ -8,7 +8,7 @@ const TripCard = ({id,name,location,imageUrl,tags,price}:TripCardProps) => {
   const path=useLocation();
 
   return (
-    <Link to={path.pathname==='/' || path.pathname.startsWith('/travel') ? `/travel/${id}` : `/trips${id}`}
+    <Link to={path.pathname==='/' || path.pathname.startsWith('/travel') ? `/travel/${id}` : `/trips/${id}`}
       className='trip-card'
      >
       <img src={imageUrl} alt={name} />
@@ -30,8 +30,8 @@ const TripCard = ({id,name,location,imageUrl,tags,price}:TripCardProps) => {
                 key={index} 
                 text={getFirstWord(tag)} 
                 cssClass={cn(
-                  index === 1 ? '!bg-pink-50' : '!bg-success-50',
-                  index === 1 ? '!text-pink-500' : '!text-success-700'
+                  index === 1 ? 'bg-pink-50' : 'bg-success-50',
+                  index === 1 ? 'text-pink-500' : 'text-success-700'
                 )
                 } />
             ))}
