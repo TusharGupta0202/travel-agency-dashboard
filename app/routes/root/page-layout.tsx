@@ -15,10 +15,6 @@ const PageLayout = () => {
         <button onClick={handleLogout} className="cursor-pointer">
             <img src="/assets/icons/logout.svg" alt="logo" className="size-6" />
         </button>
-
-        <button onClick={()=> {navigate('/dashboard')}}>
-            Dashboard
-        </button>
     </div>
   )
 }
