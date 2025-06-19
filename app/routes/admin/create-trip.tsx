@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router';
 
 
 export const loader = async () => {
-    const response = await fetch('https://restcountries.com/v3.1/all');
+    const response = await fetch('https://restcountries.com/v3.1/all?fields=name,latlng,flags,maps');
 
     const data = await response.json();
 
@@ -207,7 +207,7 @@ const CreateTrip = ({loaderData}:Route.ComponentProps) => {
                     </MapsComponent>
                 </div>
 
-                <div className='bg-gray-200 h-px w-full' />
+                <div className='w-full h-px bg-gray-200' />
 
                 {error && (
                     <div className='error'>
@@ -215,10 +215,10 @@ const CreateTrip = ({loaderData}:Route.ComponentProps) => {
                     </div>
                 )} 
 
-                <footer className='px-6 w-full'>
+                <footer className='w-full px-6'>
                     <ButtonComponent type='submit' className='button-class !h-12 !w-full' disabled={loading}>
                         <img src={`/assets/icons/${loading ? 'loader.svg' : 'magic-star.svg'}`} className={cn('size-5',{'animate-spin':loading})} />
-                        <span className='p-16-semibold text-white'>
+                        <span className='text-white p-16-semibold'>
                             {loading ? 'Generating....': 'Generate Trip'}
                         </span>
                     </ButtonComponent>
